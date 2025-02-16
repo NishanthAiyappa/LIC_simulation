@@ -64,3 +64,8 @@ There is 180 degree phase shift between input and output
 
 Gain=20 dB
 
+## Inference:
+1.The Width of the MOSFET directly effects the Drain durrent.\
+2.By changing the dimentions of the MOSFET we can directly control the amount of Drain current.\
+3.180 degree phase shift between the input and output waveform.\
+
