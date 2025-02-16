@@ -15,7 +15,8 @@ Simulate the DC analysis, Transient, and AC analysis of a CS amplifier circuit u
      - DC level= 0.9 V 
      - Amplitude= 50 mV 
      - Frequency= 1 kHz 
-     \[In LTSpice, go to Edit Simulation Command, select Transient Analysis. Set the Stop Time as 5ms, then click OK.\]
+     
+     In LTSpice, go to Edit Simulation Command, select Transient Analysis. Set the Stop Time as 5ms, then click OK.
 
 5. AC Analysis:In Edit Simulation Command, select AC Analysis.Set the Type of Sweep to Decade.Set Points per Decade to 10.Set the Frequency Range from 0.1 Hz to 1 THz.Click OK. Determine the gain and frequency response of the circuit.
 
@@ -42,4 +43,23 @@ Width=18 um(found by varying the length).
 V<sub>DS</sub>=0.467 V
 
 Q point is (0.467 V,55.55 uA)
+
+## Results:
+1.**DC Analysis:**
+
+![ccc](https://github.com/user-attachments/assets/e876cf20-3050-49e2-97ce-e13497734deb)
+
+drain current I<sub>d</sub>=55.55 uA
+V<sub>out</sub>=0.467 V \
+Width=18 um for length=180 nm\
+
+2.**Transient Analysis:**
+
+![aaaa](https://github.com/user-attachments/assets/40f8bb2f-8759-454d-8be1-2b59453b4066)
+
+There is 180 degree phase shift between input and output 
+3.**AC Analysis:**
+![fff](https://github.com/user-attachments/assets/9f6b82e7-6fb5-4289-8d5c-8d7b46b1a980)
+
+Gain=20 dB
 
