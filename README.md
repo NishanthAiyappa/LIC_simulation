@@ -58,6 +58,7 @@ Width=18 um for length=180 nm\
 ![aaaa](https://github.com/user-attachments/assets/40f8bb2f-8759-454d-8be1-2b59453b4066)
 
 There is 180 degree phase shift between input and output 
+
 3.**AC Analysis:**
 ![fff](https://github.com/user-attachments/assets/9f6b82e7-6fb5-4289-8d5c-8d7b46b1a980)
 
