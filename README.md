@@ -2,6 +2,8 @@
 
 ### Aim
 Simulate the DC analysis, Transient, and AC analysis of a CS amplifier circuit using LTSpice.
+### Circuit
+![circuit](https://github.com/user-attachments/assets/b31d8a43-07eb-42bc-8016-8dd0fb0644b7)
 
 ### Procedure
 
@@ -12,22 +14,32 @@ Simulate the DC analysis, Transient, and AC analysis of a CS amplifier circuit u
 4. Transient Analysis:Modify the  V<sub>GS</sub> voltage source to a sine wave input with:
      - DC level= 0.9 V 
      - Amplitude= 50 mV 
-     - Frequency=  1kHz 
-   - In LTSpice, go to Edit Simulation Command, select Transient Analysis. Set the Stop Time as 5ms, then click OK.
+     - Frequency= 1 kHz 
+     \[In LTSpice, go to Edit Simulation Command, select Transient Analysis. Set the Stop Time as 5ms, then click OK.\]
 
 5. AC Analysis:In Edit Simulation Command, select AC Analysis.Set the Type of Sweep to Decade.Set Points per Decade to 10.Set the Frequency Range from 0.1 Hz to 1 THz.Click OK. Determine the gain and frequency response of the circuit.
 
 ### Calculation
 
 Power Calculation
-\[ P = 100 \mu W \]
+ P = 100 uW
 
 Drain Equation
-\[ V<sub>DD</sub> = V<sub>DS</sub> + I<sub>D</sub> \times R<sub>D</sub> \]
+V<sub>DD</sub> = V<sub>DS</sub> + I<sub>D</sub>*R<sub>D</sub> 
 
-\[ P = I \times V \]
+ P = I*V
 
-Given: \( I<sub>D</sub> = 55.5 \mu A \), \( V<sub>DD</sub> = 1.8V \)
+Given: I<sub>D</sub> = 55.5 uA, V<sub>DD</sub> = 1.8 V 
 
-Since \( V<sub>DS</sub> = V<sub>out</sub> \), we ensure:
-\[ V<sub>DS</sub> \geq V<sub>GS</sub> - V<sub>th</sub> \]
+Thus V<sub>DS</sub> = V<sub>out</sub> 
+
+R<sub>d</sub>=32.4 Kohm ,but used 22 Kohm
+
+Length= 180 nm
+
+Width=18 um(found by varying the length).
+
+V<sub>DS</sub>=0.467 V
+
+Q point is (0.467 V,55.55 uA)
+
