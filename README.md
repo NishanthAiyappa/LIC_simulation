@@ -146,4 +146,4 @@ Gain=5.5 dB
 3.If width is increased it leads to a higher gain.\
 4.PMOS acts as a linear resistor.\
 5.180 degree phase shift between the input and output waveform.\
-6.The CMOS amplifier has gain =5.5 dB.(ie, the ouput signal is almost 6 times larger then the input signal)\
+6.The CMOS amplifier has gain =5.5 dB.(ie, the ouput signal is almost 6 times larger then the input signal)
