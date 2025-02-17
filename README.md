@@ -141,8 +141,9 @@ Gain=5.5 dB
 ## Inference:
 1.The Width of the MOSFET directly effects the Drain durrent.\
 2.By changing the dimensions of the MOSFET
- -M1 -when varying the width of PMOS there is not a lot of change in the drain current(ie, I<sub>d</sub> doesn't get effected much).\
+ -M1 -when varying the width of PMOS there is not a lot of change in the drain current(ie, I<sub>D</sub> doesn't get effected much).\
  -M2 -when varying the width of NMOS there is drastic change in the drain current.\
-3.If width is increased it leads to a higher gain
-4.180 degree phase shift between the input and output waveform.\
-5.The CMOS amplifier has gain =5.5 dB.(ie, the ouput signal is almost 6 times larger then the input signal)\
+3.If width is increased it leads to a higher gain.\
+4.PMOS acts as a linear resistor.\
+5.180 degree phase shift between the input and output waveform.\
+6.The CMOS amplifier has gain =5.5 dB.(ie, the ouput signal is almost 6 times larger then the input signal)\
