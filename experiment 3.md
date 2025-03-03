@@ -16,7 +16,7 @@ When V<sub>in1</sub> increases while V<sub>in2</sub> decreases, M1 conducts more
 
 The circuit rejects common-mode signals (same voltage at both inputs) and only amplifies the differential component
 
-### **question:V<sub>DD</sub>=3.3v , p<=3mW , V<sub>ICM</sub>=1.65v, Vocm=1.7v , V<sub>P</sub>=0.5v**
+### **question:V<sub>DD</sub>=3.3 V , p<=3 mW , V<sub>ICM</sub>=1.65 V, V<sub>ocm</sub>=1.7 V , V<sub>P</sub>=0.5 V**
 
 **Circuit 1** <br>
 
@@ -26,12 +26,12 @@ The circuit rejects common-mode signals (same voltage at both inputs) and only a
 
 ![image](https://github.com/user-attachments/assets/177acc0c-146e-4b17-9728-f7603b3e3047)
 
-from the calculation we have finded Iss value as 1mA <br>
-Id1 and Id2 as 0.5mA <br>
-Rd as 3.5kohm <br>
-Rss as 550ohm <br>
-Vgs=vg - vp = 1.65v - 0.5v = 1.15v <br>
-Vov = vgs - vth = 1.15v - 0.366v = 0.784v <br>
+from the calculation we have finded I<sub>SS</sub>value as 0.909 mA <br>
+I<sub>D1</sub> and I<sub>D2</sub> as 0.45 mA <br>
+R<sub>D</sub> as 3.5 kohm <br>
+R<sub>SS</sub> as 550 ohm <br>
+V<sub>GS</sub>=V<sub>G</sub> - V<sub>p</sub> = 1.65 V - 0.5 V = 1.15 v <br>
+V<sub>OV</sub> = V<sub>GS</sub> - V<sub>th</sub> = 1.15 V - 0.366 V = 0.784 V <br>
 
 ### **DC Analysis**
 
@@ -40,8 +40,8 @@ To set the operating point go to Configure Analysis and select Dc operating Poin
 ![dc2](https://github.com/user-attachments/assets/f76e42bb-74e2-496f-b76f-efc2412a4067)
 
 to set correct operating point vary width and length values 
-width = 208u <br>
-length = 6u <br>
+width = 208 u <br>
+length = 6 u <br>
 
 
 ### **Analysis**
@@ -135,10 +135,11 @@ Replace current Source with N-Channel MOSFET .
 V<sub>b</sub> should be less than V<sub>p</sub> as the drain voltage of MOSFET M3 is V<sub>p</sub>
 
 and the V<sub>b</sub> should be greater than the V<sub>th</sub> , therefore the value of V<sub>b</sub> should be between 0.366 V and 0.5V.
+
 ### **DC Analysis**
 
-To set the operating point vary 3rd MOSFET width and keep length as same before 
-For approx operating Point i got width as 17.75u
+set the operating point of M3 such that It is in saturation state.
+V<sub>b</sub>=4.2 V
 
 ![Screenshot 2025-03-03 001117](https://github.com/user-attachments/assets/b8eab2f6-7e14-4b52-b01e-cfe42d79ec75)
 
@@ -148,18 +149,31 @@ For approx operating Point i got width as 17.75u
 
 ### ""Result and Inference""
 
-### **Circuit 4**
-Replace two resistor with PMOS Transistor
+V<sub>DD</sub>=3.3 V
 
-![Screenshot 2025-03-03 054151](https://github.com/user-attachments/assets/3bddfece-f2be-4f60-9caf-61d53a124653)
+V<sub>p</sub>=0.5 V
 
-### **DC Analysis**
+V<sub>ICM</sub>=1.65 V 
 
-### **AC Analysis**
+V<sub>OCM</sub>=1.7 V
 
-### **TRANSIENT ANALYSIS**
+R<sub>D</sub>=3.5 kohm
 
-### ""Result and Inference""
+R<sub>SS</sub>=550 ohm
+
+I<sub>SS</sub>=0.909 mA
+
+I<sub>D</sub>=0.45 mA
+
+1. When V<sub>ICM</sub> changes there is a change in the output voltage and Drain current.
+
+2. If the input voltage is more then the minimum swing or outside the allowable swing the output wave form deforms, ie it is in triode or cutoff region.
+
+3. If R<sub>D</sub> value changes there will be a change in the output voltage,by selecting the resistance wecan control the output voltage.
+
+4. V<sub>b</sub> should be less than V<sub>p</sub> as the drain voltage of MOSFET M3 is V<sub>p</sub>
+and the V<sub>b</sub> should be greater than the V<sub>th</sub> .
+
 
 
 
