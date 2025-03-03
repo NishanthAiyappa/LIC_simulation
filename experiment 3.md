@@ -20,78 +20,74 @@ The circuit rejects common-mode signals (same voltage at both inputs) and only a
 
 **Circuit 1** <br>
 
+![ci](https://github.com/user-attachments/assets/fcbc06b1-b816-4f9f-a97c-0958f0cc0b90)
+
 **Step 1:Dc analysis design Rd and Rss**
+
+![image](https://github.com/user-attachments/assets/177acc0c-146e-4b17-9728-f7603b3e3047)
 
 from the calculation we have finded Iss value as 1mA <br>
 Id1 and Id2 as 0.5mA <br>
-Rd as 1.9kohm <br>
-Rss as 400ohm <br>
-Vgs=vg - vp = 1.2v - 0.4v = 0.8v <br>
-Vov = vgs - vth = 0.8v - 0.366v = 0.434v <br>
+Rd as 3.5kohm <br>
+Rss as 550ohm <br>
+Vgs=vg - vp = 1.65v - 0.5v = 1.15v <br>
+Vov = vgs - vth = 1.15v - 0.366v = 0.784v <br>
 
 ### **DC Analysis**
 
 To set the operating point go to Configure Analysis and select Dc operating Point <br>
 
+![dc2](https://github.com/user-attachments/assets/f76e42bb-74e2-496f-b76f-efc2412a4067)
+
 to set correct operating point vary width and length values 
-width = 6.45u <br>
-length = 180n <br>
+width = 208u <br>
+length = 6u <br>
 
-![Screenshot 2025-03-02 164823](https://github.com/user-attachments/assets/2fe5efbe-f348-4bdd-b18f-ee9ddc551ac3)
-
-![Screenshot 2025-03-02 164908](https://github.com/user-attachments/assets/316231bf-4a42-4e40-a95e-72c4710cc051)
 
 ### **Analysis**
 
-**Increase Vicm from 1.2v to 1.3v and observe Vocm and Vp** <br>
+### Effect of VICM on Vout and VP
+
 | **Common-Mode Input Voltage (V_ICM)** | **Output Voltage (V_out)** | **Voltage at Point P (V_P)** |
 |--------------------------------------|--------------------------|--------------------------|
-| **1.2V**                            | **1.24836V**             | **0.4V**                |
-| **1.3V**                            | **1.1V**                 | **0.46V**               |
+| **1.65V**                            | **1.70V**             | **0.5V**                |
+| **1.3V**                            | **1.62V**                 | **0.59V**               |
 
-### Effect of VICM on Vout and VP
+
 
 As the common-mode input voltage \( VICM \) increases, the source voltage \( VP \) also increases, causing a shift in the operating point. This leads to a higher drain current, resulting in a greater voltage drop across \( RD \), which reduces \( Vout \).
 
-![Screenshot 2025-03-02 165923](https://github.com/user-attachments/assets/9935d54d-cf30-47ea-80d7-b6691c1cbb31)
 
 ### **Calculate maximum input and output Swing**
 
-![WhatsApp Image 2025-03-02 at 20 58 55_50bf8a35](https://github.com/user-attachments/assets/528ca83b-b081-42c5-a450-f31491dd1fcd)
+![image](https://github.com/user-attachments/assets/f7a39423-0de0-439c-b98a-217d4620e004)
 
-![WhatsApp Image 2025-03-02 at 20 58 55_6f38755a](https://github.com/user-attachments/assets/cfb49074-5091-4a3b-8e2e-0772f622ec15)
-
-### **GAIN**
-
-![WhatsApp Image 2025-03-02 at 21 16 06_1f174e67](https://github.com/user-attachments/assets/5ab85112-8fa7-4060-ba94-98c5b5cdaa32)
 
 ### **TRANSIENT ANALYSIS**
 go to configure Analysis and select transient analysis then <br>
-stop time as 5m <br>
-time to start saving data as 0 <br>
+stop time as 1m ,time to start saving data as 0 <br>
 
 • Waveform Type: Sine Wave
-• Amplitude: 20 mV
-• DC Offset: 1.2 V
+• DC Offset: 1.65 V
+• Amplitude: 25 mV
 • Frequency: 1 kHz
+
+put the same values for V2 but change the phase angle.
 
 And in V2 phi(deg) as 180
 
-![Screenshot 2025-03-02 212112](https://github.com/user-attachments/assets/74b10d4b-3cdb-4b45-b7ad-b8be02706d6c)
+![image](https://github.com/user-attachments/assets/5f94dcd4-4c40-4ab4-93b0-b64ba6fabf10)
 
-![Screenshot 2025-03-02 212304](https://github.com/user-attachments/assets/92739734-338d-42f2-8d4f-f6904b5718fb)
+when the input voltage is more then the minimum swing or outside the allowable swing the output wave form deforms, ie it is in triode or cutoff region.
 
-![Screenshot 2025-03-02 212546](https://github.com/user-attachments/assets/470d1956-3964-4aa2-a722-cb605d867b1b)
+![diform](https://github.com/user-attachments/assets/afb2f26a-64ab-4c48-8c14-043b88c2a829)
+
 
 ### **AC Analysis**
-
-go to configure analysis and select AC Analysis
 • Type of sweep: Decade
-• Number of points per decade: 5
+• Number of points per decade: 10
 • Start frequency: 0.1 Hz
 • Stop frequency: 1 THz
-
-Set <br>
 AC Amplitude as 1 and AC Phase as 0 in V1 <br>
 AC Amplitude as 1 and AC Phase as 180 in V2 <br>
 
@@ -104,7 +100,7 @@ AC Amplitude as 1 and AC Phase as 180 in V2 <br>
 
 ### **Circuit 2** <br>
 
-Replacing Resistor with Current Source
+Replacing Resistor with Current Source 
 
 ![Screenshot 2025-03-02 222734](https://github.com/user-attachments/assets/dc70cd6c-eed5-4693-bb86-b6c9e4096b61)
 
