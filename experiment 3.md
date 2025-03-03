@@ -24,7 +24,8 @@ The circuit rejects common-mode signals (same voltage at both inputs) and only a
 
 **Step 1:Dc analysis design Rd and Rss**
 
-![image](https://github.com/user-attachments/assets/177acc0c-146e-4b17-9728-f7603b3e3047)
+![image](https://github.com/user-attachments/assets/f9ea71f9-978c-4e67-aa29-00229ed263f1)
+
 
 from the calculation we have finded I<sub>SS</sub>value as 0.909 mA <br>
 I<sub>D1</sub> and I<sub>D2</sub> as 0.45 mA <br>
@@ -56,6 +57,10 @@ length = 6 u <br>
 
 
 As the common-mode input voltage \( VICM \) increases, the source voltage \( VP \) also increases, causing a shift in the operating point. This leads to a higher drain current, resulting in a greater voltage drop across \( RD \), which reduces \( Vout \).
+
+### **Calculate Gain**
+
+![image](https://github.com/user-attachments/assets/fd9ae479-071b-4594-b645-595a6984d270)
 
 
 ### **Calculate maximum input and output Swing**
@@ -91,10 +96,6 @@ when the input voltage is more then the minimum swing or outside the allowable s
 AC Amplitude as 1 and AC Phase as 0 in V1 <br>
 AC Amplitude as 1 and AC Phase as 180 in V2 <br>
 
-![Screenshot 2025-03-02 235653](https://github.com/user-attachments/assets/db083118-03a3-4021-8a05-7e8285b9bea3)
-
-![Screenshot 2025-03-02 215847](https://github.com/user-attachments/assets/832d0f56-d7ed-4f4a-b0cb-d0fc4634f410)
-
 ![Screenshot 2025-03-02 220006](https://github.com/user-attachments/assets/ecfef7ef-22da-4aa5-93b4-74fba38dd18f)
 
 
@@ -102,35 +103,28 @@ AC Amplitude as 1 and AC Phase as 180 in V2 <br>
 
 Replace the resistor with a current source=0.909mA. 
 
-![Screenshot 2025-03-02 222734](https://github.com/user-attachments/assets/dc70cd6c-eed5-4693-bb86-b6c9e4096b61)
+![image](https://github.com/user-attachments/assets/8203f89b-7990-4a8f-b090-9d715e7e6222)
 
 ### **DC Analysis**
+![dc22](https://github.com/user-attachments/assets/ef1b0399-b421-40f2-973c-93915db96652)
 
-![Screenshot 2025-03-02 222935](https://github.com/user-attachments/assets/d922b434-5aa1-4bb5-8855-bf281f8d0f53)
+### **TRANSEINT ANALYSIS**
 
-![Screenshot 2025-03-02 223027](https://github.com/user-attachments/assets/7ed89486-72bf-409c-a950-a7bc6410a323)
+![trans22](https://github.com/user-attachments/assets/b0262198-ccbb-4889-900c-58d6f15b76f6)
 
-### **TRANSIENT ANALYSIS**
+if Vin is more then the allowable swing.
 
-![Screenshot 2025-03-02 235653](https://github.com/user-attachments/assets/698fa1bf-381b-4deb-a83d-4cf1f8227d05)
-
-Similarly when Vin is more than the allowable Swing the output waveform deforms.
-
-![Screenshot 2025-03-02 223315](https://github.com/user-attachments/assets/d0db6eb8-ab1e-4649-bf22-f65bace10bb8)
+![diform2](https://github.com/user-attachments/assets/409afb66-cbe0-4cf0-87f9-f32b815679fc)
 
 ### **AC ANALYSIS**
 
-![Screenshot 2025-03-02 224140](https://github.com/user-attachments/assets/e68ff7b8-09b1-4afa-9d31-49f6f7a2c907)
-
-![Screenshot 2025-03-02 224947](https://github.com/user-attachments/assets/f1914323-d85a-4be8-a213-21e988cb0678)
-
-![Screenshot 2025-03-02 225541](https://github.com/user-attachments/assets/e4d83695-4ca3-460d-972c-5aeafdbbca74)
+![Screenshot 2025-03-02 223315](https://github.com/user-attachments/assets/d0db6eb8-ab1e-4649-bf22-f65bace10bb8)
 
 ### **Circuit 3** <br>
 
 Replace current Source with N-Channel MOSFET .
 
-![Screenshot 2025-03-03 000910](https://github.com/user-attachments/assets/3b155209-c3eb-4a34-b1ed-1a664c0c2067)
+![image](https://github.com/user-attachments/assets/64a7f151-768e-4660-8494-d1c5031e9794)
 
 V<sub>b</sub> should be less than V<sub>p</sub> as the drain voltage of MOSFET M3 is V<sub>p</sub>
 
@@ -139,13 +133,24 @@ and the V<sub>b</sub> should be greater than the V<sub>th</sub> , therefore the 
 ### **DC Analysis**
 
 set the operating point of M3 such that It is in saturation state.
-V<sub>b</sub>=4.2 V
+V<sub>b</sub>=4 V
 
-![Screenshot 2025-03-03 001117](https://github.com/user-attachments/assets/b8eab2f6-7e14-4b52-b01e-cfe42d79ec75)
+![image](https://github.com/user-attachments/assets/ce005922-5206-46ac-b060-955c431dadd9)
+
+### **TRANSIENT ANALYSIS**
+
+![image](https://github.com/user-attachments/assets/962d3337-ddcc-4651-9ba6-2586c9642cc8)
+
+if vin is more then
+
+![diform222](https://github.com/user-attachments/assets/9a288f53-8a88-4ae2-bc8e-c97f61d497d3)
+
 
 ### **AC Analysis**
 
-### **TRANSIENT ANALYSIS**
+
+![Screenshot 2025-03-02 223315](https://github.com/user-attachments/assets/d0db6eb8-ab1e-4649-bf22-f65bace10bb8)
+
 
 ### ""Result and Inference""
 
