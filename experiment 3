@@ -1,16 +1,26 @@
 
 ### **"Differential Amplifier"**
 
-A differential amplifier is a fundamental building block in analog circuit design, widely used in applications such as signal amplification, noise reduction, and data acquisition systems. It amplifies the difference between two input signals while rejecting common-mode noise, making it ideal for high-precision circuits, including operational amplifiers and analog front-end systems.
+A differential amplifier is a key circuit in analog electronics that amplifies the difference between two input signals while rejecting common-mode signals (noise). It is widely used in operational amplifiers (op-amps), instrumentation amplifiers, and analog circuits.
+A basic MOSFET differential amplifier consists of:
 
-In modern electronics, differential amplifiers play a crucial role in communication systems, biomedical instrumentation, and sensor interfaces, where signal integrity is critical. The ability to suppress external interference and unwanted signals makes them superior to single-ended amplifiers in noisy environments.
+Two matched MOSFETs (M1 and M2) forming a differential pair
+
+A current source I<sub>SS</sub> as a tail current
+
+Two drain resistors R<sub>D</sub>
+
+When the inputs V<sub>in1</sub> and V<sub>in2</sub> are equal, the circuit is balanced, and the current splits equally.
+
+When V<sub>in1</sub> increases while V<sub>in2</sub> decreases, M1 conducts more current, and M2 conducts less, creating a voltage difference at the outputs.
+
+The circuit rejects common-mode signals (same voltage at both inputs) and only amplifies the differential component
 
 ### **question:V<sub>DD</sub>=3.3v , p<=3mW , V<sub>ICM</sub>=1.65v, Vocm=1.7v , V<sub>P</sub>=0.5v**
 
 **Circuit 1** <br>
 
 **Step 1:Dc analysis design Rd and Rss**
-![WhatsApp Image 2025-03-02 at 16 24 34_a544ce2f](https://github.com/user-attachments/assets/dcbb4266-b814-49d4-894a-854e76ae5f80)
 
 from the calculation we have finded Iss value as 1mA <br>
 Id1 and Id2 as 0.5mA <br>
