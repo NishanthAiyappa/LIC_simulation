@@ -65,6 +65,7 @@ As the common-mode input voltage \( VICM \) increases, the source voltage \( VP 
 
 ### **Calculate maximum input and output Swing**
 
+![d347429a-45cd-4393-940e-c9ef2ae17f5b](https://github.com/user-attachments/assets/4c0f610f-6737-4329-b9ae-218b31ba7b20)
 
 
 
@@ -133,7 +134,7 @@ and the V<sub>b</sub> should be greater than the V<sub>th</sub> , therefore the 
 ### **DC Analysis**
 
 set the operating point of M3 such that It is in saturation state.
-V<sub>b</sub>=4 V
+V<sub>b</sub>=0.4 V
 
 ![image](https://github.com/user-attachments/assets/ce005922-5206-46ac-b060-955c431dadd9)
 
