@@ -25,9 +25,7 @@ The circuit rejects common-mode signals (same voltage at both inputs) and only a
 ![ci](https://github.com/user-attachments/assets/fcbc06b1-b816-4f9f-a97c-0958f0cc0b90)
 
 **Step 1:Dc analysis design Rd and Rss**
-
-![image](https://github.com/user-attachments/assets/f9ea71f9-978c-4e67-aa29-00229ed263f1)
-
+![image](https://github.com/user-attachments/assets/f7a39423-0de0-439c-b98a-217d4620e004)
 
 from the calculation we have finded I<sub>SS</sub>value as 0.909 mA <br>
 I<sub>D1</sub> and I<sub>D2</sub> as 0.45 mA <br>
@@ -67,7 +65,7 @@ As the common-mode input voltage \( VICM \) increases, the source voltage \( VP 
 
 ### **Calculate maximum input and output Swing**
 
-![image](https://github.com/user-attachments/assets/f7a39423-0de0-439c-b98a-217d4620e004)
+
 
 
 ### **TRANSIENT ANALYSIS**
