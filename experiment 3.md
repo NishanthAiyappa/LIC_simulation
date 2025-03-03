@@ -100,7 +100,7 @@ AC Amplitude as 1 and AC Phase as 180 in V2 <br>
 
 ### **Circuit 2** <br>
 
-Replacing Resistor with Current Source 
+Replace the resistor with a current source=0.909mA. 
 
 ![Screenshot 2025-03-02 222734](https://github.com/user-attachments/assets/dc70cd6c-eed5-4693-bb86-b6c9e4096b61)
 
@@ -110,13 +110,15 @@ Replacing Resistor with Current Source
 
 ![Screenshot 2025-03-02 223027](https://github.com/user-attachments/assets/7ed89486-72bf-409c-a950-a7bc6410a323)
 
-### **AC Analysis**
+### **TRANSIENT ANALYSIS**
 
 ![Screenshot 2025-03-02 235653](https://github.com/user-attachments/assets/698fa1bf-381b-4deb-a83d-4cf1f8227d05)
 
+Similarly when Vin is more than the allowable Swing the output waveform deforms.
+
 ![Screenshot 2025-03-02 223315](https://github.com/user-attachments/assets/d0db6eb8-ab1e-4649-bf22-f65bace10bb8)
 
-### **TRANSIENT ANALYSIS**
+### **AC ANALYSIS**
 
 ![Screenshot 2025-03-02 224140](https://github.com/user-attachments/assets/e68ff7b8-09b1-4afa-9d31-49f6f7a2c907)
 
@@ -126,15 +128,13 @@ Replacing Resistor with Current Source
 
 ### **Circuit 3** <br>
 
-Replacing current Source with MOSFET 
+Replace current Source with N-Channel MOSFET .
 
 ![Screenshot 2025-03-03 000910](https://github.com/user-attachments/assets/3b155209-c3eb-4a34-b1ed-1a664c0c2067)
 
-How to find Vb?
-Vb = vth + Vp <br>
-Vb = 0.366v + 0.4v <br>
-Vb = 0.766v <br>
+V<sub>b</sub> should be less than V<sub>p</sub> as the drain voltage of MOSFET M3 is V<sub>p</sub>
 
+and the V<sub>b</sub> should be greater than the V<sub>th</sub> , therefore the value of V<sub>b</sub> should be between 0.366 V and 0.5V.
 ### **DC Analysis**
 
 To set the operating point vary 3rd MOSFET width and keep length as same before 
