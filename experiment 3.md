@@ -22,14 +22,14 @@ The circuit rejects common-mode signals (same voltage at both inputs) and only a
 
 **Circuit 1** <br>
 
-![ci](https://github.com/user-attachments/assets/fcbc06b1-b816-4f9f-a97c-0958f0cc0b90)
+![image](https://github.com/user-attachments/assets/6caf6b0a-5821-4259-8b8d-80fce68f4cb9)
 
 **Step 1:Dc analysis design Rd and Rss**
 ![image](https://github.com/user-attachments/assets/f7a39423-0de0-439c-b98a-217d4620e004)
 
 from the calculation we have finded I<sub>SS</sub>value as 0.909 mA <br>
 I<sub>D1</sub> and I<sub>D2</sub> as 0.45 mA <br>
-R<sub>D</sub> as 3.5 kohm <br>
+R<sub>D</sub> as 2.5 kohm <br>
 R<sub>SS</sub> as 550 ohm <br>
 V<sub>GS</sub>=V<sub>G</sub> - V<sub>p</sub> = 1.65 V - 0.5 V = 1.15 v <br>
 V<sub>OV</sub> = V<sub>GS</sub> - V<sub>th</sub> = 1.15 V - 0.366 V = 0.784 V <br>
@@ -38,7 +38,8 @@ V<sub>OV</sub> = V<sub>GS</sub> - V<sub>th</sub> = 1.15 V - 0.366 V = 0.784 V <b
 
 To set the operating point go to Configure Analysis and select Dc operating Point <br>
 
-![dc2](https://github.com/user-attachments/assets/f76e42bb-74e2-496f-b76f-efc2412a4067)
+![image](https://github.com/user-attachments/assets/11c557c2-3210-4b50-9a06-5f3bd5e15e0d)
+
 
 to set correct operating point vary width and length values 
 width = 208 u <br>
@@ -47,16 +48,25 @@ length = 6 u <br>
 
 ### **Analysis**
 
-### Effect of VICM on Vout and VP
+### Effect of VICM on Vout and Id
+Vicm is varried from 0 to 3.3 V.
 
-| **Common-Mode Input Voltage (V_ICM)** | **Output Voltage (V_out)** | **Voltage at Point P (V_P)** |
+Variation in Vocm
+![VaryingVicm_vout](https://github.com/user-attachments/assets/72524952-5d99-4425-818a-b55914852ad3)
+
+
+Variation in Id
+
+![VaryingVicm_id](https://github.com/user-attachments/assets/2e6f4518-96d6-4e89-b2b0-daab045ad882)
+
+| **Common-Mode Input Voltage (V_ICM)** | **Output Voltage (V_out)** | **Drain Current  (Id)** |
 |--------------------------------------|--------------------------|--------------------------|
-| **1.65V**                            | **1.70V**             | **0.5V**                |
-| **1.3V**                            | **1.62V**                 | **0.59V**               |
+| **1.65V**                            | **1.70V**             | **0.45 mA**                |
+| **1.3V**                            | **2.32V**                 | **0.26 mA**               |
 
 
 
-As the common-mode input voltage \( VICM \) increases, the source voltage \( VP \) also increases, causing a shift in the operating point. This leads to a higher drain current, resulting in a greater voltage drop across \( RD \), which reduces \( Vout \).
+As the common-mode input voltage \( VICM \) increases, the drain current also increases, causing a shift in the operating point, resulting in a greater voltage drop across \( RD \), which reduces \( Vout \).
 
 ### **Calculate Gain**
 
@@ -81,12 +91,13 @@ stop time as 1m ,time to start saving data as 0 <br>
 put the same values for V2 but change the phase angle.
 
 And in V2 phi(deg) as 180
-
-![image](https://github.com/user-attachments/assets/5f94dcd4-4c40-4ab4-93b0-b64ba6fabf10)
+![image](https://github.com/user-attachments/assets/56a19522-3e12-4eb1-90e6-1f690d6d9447)
+ The Gain is 3.02.
 
 when the input voltage is more then the minimum swing or outside the allowable swing the output wave form deforms, ie it is in triode or cutoff region.
 
-![diform](https://github.com/user-attachments/assets/afb2f26a-64ab-4c48-8c14-043b88c2a829)
+
+![trans1](https://github.com/user-attachments/assets/161df988-2108-4ca1-a5c4-7ab6cca6d8b7)
 
 
 ### **AC Analysis**
@@ -104,18 +115,36 @@ AC Amplitude as 1 and AC Phase as 180 in V2 <br>
 
 Replace the resistor with a current source=0.909mA. 
 
-![image](https://github.com/user-attachments/assets/8203f89b-7990-4a8f-b090-9d715e7e6222)
+![image](https://github.com/user-attachments/assets/9c695010-58d1-4483-8dce-6e54354695c9)
 
 ### **DC Analysis**
-![dc22](https://github.com/user-attachments/assets/ef1b0399-b421-40f2-973c-93915db96652)
+![image](https://github.com/user-attachments/assets/dfaa102d-a894-4d6a-8957-a3e214736714)
+
+### Effect of VICM on Vout and Id
+Vicm is varried from 0 to 3.3 V.
+
+Variation in Vocm
+
+![image](https://github.com/user-attachments/assets/7f9c4dcd-0fd1-4817-9a8a-8fe0155e1047)
+
+
+Variation in Id
+
+![image](https://github.com/user-attachments/assets/4b839f99-6be4-4a80-b9c9-7074b9971699)
+
+| **Common-Mode Input Voltage (V_ICM)** | **Output Voltage (V_out)** | **Drain Current  (Id)** |
+|--------------------------------------|--------------------------|--------------------------|
+| **1.65V**                            | **1.71V**             | **0.46 mA**                |
+| **1.3V**                            | **2.1V**                 | **0.32 mA**               |
+
+
 
 ### **TRANSEINT ANALYSIS**
-
-![trans22](https://github.com/user-attachments/assets/b0262198-ccbb-4889-900c-58d6f15b76f6)
+![image](https://github.com/user-attachments/assets/841008c0-9d37-41aa-a072-934c0a4ac0bc)
 
 if Vin is more then the allowable swing.
 
-![diform2](https://github.com/user-attachments/assets/409afb66-cbe0-4cf0-87f9-f32b815679fc)
+![image](https://github.com/user-attachments/assets/76994ebf-9b99-417a-b7ad-6c28a5e40cfb)
 
 ### **AC ANALYSIS**
 
@@ -125,7 +154,7 @@ if Vin is more then the allowable swing.
 
 Replace current Source with N-Channel MOSFET .
 
-![image](https://github.com/user-attachments/assets/64a7f151-768e-4660-8494-d1c5031e9794)
+![image](https://github.com/user-attachments/assets/c08c517f-a53d-4e14-851c-ba44ec7598e7)
 
 V<sub>b</sub> should be less than V<sub>p</sub> as the drain voltage of MOSFET M3 is V<sub>p</sub>
 
@@ -134,17 +163,35 @@ and the V<sub>b</sub> should be greater than the V<sub>th</sub> , therefore the 
 ### **DC Analysis**
 
 set the operating point of M3 such that It is in saturation state.
-V<sub>b</sub>=0.4 V
+V<sub>3</sub>=0.8 V
 
-![image](https://github.com/user-attachments/assets/ce005922-5206-46ac-b060-955c431dadd9)
+![image](https://github.com/user-attachments/assets/050d82d5-1117-448b-9bb6-ac9d6098b997)
+
+### Effect of VICM on Vout and Id
+Vicm is varried from 0 to 3.3 V.
+
+Variation in Vocm
+
+![image](https://github.com/user-attachments/assets/e1607648-320e-4493-8d90-286040340233)
+
+
+Variation in Id
+
+![image](https://github.com/user-attachments/assets/4b839f99-6be4-4a80-b9c9-7074b9971699)
+
+| **Common-Mode Input Voltage (V_ICM)** | **Output Voltage (V_out)** | **Drain Current  (Id)** |
+|--------------------------------------|--------------------------|--------------------------|
+| **1.65V**                            | **1.70V**             | **0.46 mA**                |
+| **1.3V**                            | **2.33V**                 | **0.27 mA**               |
+
 
 ### **TRANSIENT ANALYSIS**
 
-![image](https://github.com/user-attachments/assets/962d3337-ddcc-4651-9ba6-2586c9642cc8)
+![image](https://github.com/user-attachments/assets/910186c3-9e66-4c6d-8cb1-d2a1c997118c)
 
 if vin is more then
 
-![diform222](https://github.com/user-attachments/assets/9a288f53-8a88-4ae2-bc8e-c97f61d497d3)
+![image](https://github.com/user-attachments/assets/50acbdec-164a-40e2-afa5-3a8ce1cac397)
 
 
 ### **AC Analysis**
