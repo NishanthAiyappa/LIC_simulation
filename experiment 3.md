@@ -1,5 +1,16 @@
 
 ### **Differential Amplifier**
+## **Aim:**
+
+Design and analyze the MOS differential amplifier circuit for the given specifications:
+
+- V<sub>DD</sub>=3.3 V
+- p<=3 mW
+- V<sub>ICM</sub>=1.65 V
+- V<sub>ocm</sub>=1.7 V
+- V<sub>P</sub>=0.5 V
+
+## Theory
 
 A differential amplifier is a key circuit in analog electronics that amplifies the difference between two input signals while rejecting common-mode signals (noise). It is widely used in operational amplifiers (op-amps), instrumentation amplifiers, and analog circuits.
 A basic MOSFET differential amplifier consists of:
@@ -16,32 +27,44 @@ When V<sub>in1</sub> increases while V<sub>in2</sub> decreases, M1 conducts more
 
 The circuit rejects common-mode signals (same voltage at both inputs) and only amplifies the differential component
 
-### **question:**
-
-**V<sub>DD</sub>=3.3 V , p<=3 mW , V<sub>ICM</sub>=1.65 V, V<sub>ocm</sub>=1.7 V , V<sub>P</sub>=0.5 V**
 
 **Circuit 1** <br>
+**design Rd and Rss**
 
 ![image](https://github.com/user-attachments/assets/6caf6b0a-5821-4259-8b8d-80fce68f4cb9)
 
-**Step 1:Dc analysis design Rd and Rss**
+ss  and stability of the circuit.
+- **NMOS Transistors (M1 and M2):** Act as the main amplifying elements, forming a differential pair that amplifies the difference between the two input signals.
+- **Output Nodes (V<sub>OCM</sub> and V<sub>2OCM</sub>):** The differential output signals are taken from these points.
+
+Calculation:
 ![image](https://github.com/user-attachments/assets/f7a39423-0de0-439c-b98a-217d4620e004)
 
-from the calculation we have finded I<sub>SS</sub>value as 0.909 mA <br>
+from the calculation we have found I<sub>SS</sub> value as 0.909 mA <br>
 I<sub>D1</sub> and I<sub>D2</sub> as 0.45 mA <br>
 R<sub>D</sub> as 2.5 kohm <br>
 R<sub>SS</sub> as 550 ohm <br>
 V<sub>GS</sub>=V<sub>G</sub> - V<sub>p</sub> = 1.65 V - 0.5 V = 1.15 v <br>
 V<sub>OV</sub> = V<sub>GS</sub> - V<sub>th</sub> = 1.15 V - 0.366 V = 0.784 V <br>
 
+
 ### **DC Analysis**
 
-To set the operating point go to Configure Analysis and select Dc operating Point <br>
-
+1. **Open LTspice XVII** and load the MOS differential amplifier circuit schematic.
+2. **Set Up the Simulation Command:**
+   - Click on **Simulate** > **Edit Simulation Cmd**.
+   - In the **DC op pnt** tab, select **.op (DC Operating Point Analysis)**.
+   - Click **OK**, and place the generated command on the schematic.
+3. **Check the Component Parameters:**
+   - Ensure that the MOSFET models and resistor values match the given specifications.
+   - Verify that the power supply voltages (Vdd, Vicm) are correctly set.
+4. **Run the Simulation:**
+   - Click on **Run**.
+   - 
 ![image](https://github.com/user-attachments/assets/11c557c2-3210-4b50-9a06-5f3bd5e15e0d)
 
 
-to set correct operating point vary width and length values 
+to set correct operating point ,the width and length values are
 width = 208 u <br>
 length = 6 u <br>
 
@@ -52,6 +75,7 @@ length = 6 u <br>
 Vicm is varried from 0 to 3.3 V.
 
 Variation in Vocm
+
 ![VaryingVicm_vout](https://github.com/user-attachments/assets/72524952-5d99-4425-818a-b55914852ad3)
 
 
@@ -80,17 +104,18 @@ As the common-mode input voltage \( VICM \) increases, the drain current also in
 
 
 ### **TRANSIENT ANALYSIS**
-go to configure Analysis and select transient analysis then <br>
-stop time as 1m ,time to start saving data as 0 <br>
+1.go to configure Analysis and select transient analysis then <br>
+2.stop time as 1m ,time to start saving data as 0 <br>
 
 • Waveform Type: Sine Wave
 • DC Offset: 1.65 V
 • Amplitude: 25 mV
 • Frequency: 1 kHz
 
-put the same values for V2 but change the phase angle.
+3.put the same values for V2 but change the phase angle.
 
-And in V2 phi(deg) as 180
+4.And in V2 phi(deg) as 180
+
 ![image](https://github.com/user-attachments/assets/56a19522-3e12-4eb1-90e6-1f690d6d9447)
  The Gain is 3.02.
 
@@ -109,6 +134,15 @@ AC Amplitude as 1 and AC Phase as 0 in V1 <br>
 AC Amplitude as 1 and AC Phase as 180 in V2 <br>
 
 ![Screenshot 2025-03-02 220006](https://github.com/user-attachments/assets/ecfef7ef-22da-4aa5-93b4-74fba38dd18f)
+
+## Variation of Gain wrt to  different Vicm.
+
+- the Vout remains almost unchanged when both the Vicm is varied simultaneously, if the Vicm voltages is varied at different directions the Vout changes from each other,if the input signal of the second MOSFET is increased its gain reduces.
+
+  V2(50 mV) is given a different input signal than the V1(25 mV).
+
+![circ3_50mv](https://github.com/user-attachments/assets/f2fc283d-da4a-4edf-9cff-d7e5a8d9e828)
+
 
 
 ### **Circuit 2** <br>
@@ -150,6 +184,16 @@ if Vin is more then the allowable swing.
 
 ![Screenshot 2025-03-02 223315](https://github.com/user-attachments/assets/d0db6eb8-ab1e-4649-bf22-f65bace10bb8)
 
+## Variation of Gain wrt to  different Vicm.
+
+- the Vout remains unchanged when both the Vicm is varied simultaneously, if the Vicm voltages is varied at different directions there is no change in the Vout ,thus gain will remain constant.
+
+V2(50 mV) is given a different input signal than the V1(25 mV).
+![image](https://github.com/user-attachments/assets/8994691f-86ea-4dfd-b76b-c7dcba733edd)
+
+
+
+
 ### **Circuit 3** <br>
 
 Replace current Source with N-Channel MOSFET .
@@ -189,7 +233,7 @@ Variation in Id
 
 ![image](https://github.com/user-attachments/assets/910186c3-9e66-4c6d-8cb1-d2a1c997118c)
 
-if vin is more then
+if Vicm is more then
 
 ![image](https://github.com/user-attachments/assets/50acbdec-164a-40e2-afa5-3a8ce1cac397)
 
@@ -200,77 +244,34 @@ if vin is more then
 ![Screenshot 2025-03-02 223315](https://github.com/user-attachments/assets/d0db6eb8-ab1e-4649-bf22-f65bace10bb8)
 
 
+## Variation of Gain wrt to  different Vicm.
+
+- the gain remains almost unchanged when both the Vicm is varied simultaneously, if the Vicm voltages is varied at different directions the gain will have slight variation, it has more stability.
+
+  V2(50 mV) is given a different input signal than the V1(25 mV).
+
+![circ3_50mv](https://github.com/user-attachments/assets/f2fc283d-da4a-4edf-9cff-d7e5a8d9e828)
+
+
 ### ""Result and Inference""
 
-V<sub>DD</sub>=3.3 V
-
-V<sub>p</sub>=0.5 V
-
-V<sub>ICM</sub>=1.65 V 
-
-V<sub>OCM</sub>=1.7 V
-
-R<sub>D</sub>=3.5 kohm
-
-R<sub>SS</sub>=550 ohm
-
-I<sub>SS</sub>=0.909 mA
-
-I<sub>D</sub>=0.45 mA
+| **Parameter** | **Circuit 1** | **Circuit 2** | **Circuit 3** |
+|--------------|--------------|--------------|--------------|
+| **V(out1)**  | 1.70006 V  | 1.70925 V  | 1.70001 V  |
+| **V(out2)**  | 1.70006 V  | 1.70925 V  | 1.70001 V  |
+| **V(vp) (Common Mode Voltage)** | 0.502839 V | 0.5V | 0.502822 V |
+| **Id(M1)** | 0.000457127 A | 0.0004545 A | 0.00045714 A |
+| **Id(M2)** | 0.000457127 A | 0.0004545 A | 0.00045714 A |
+| **Id(M3) (Tail Current Source)** | absent | 0.000909(set with ideal current source) | 0.000914281 A |
+| **Total Tail Current** | 0.000914253 A | 0.000909 A | 0.000914281 A |
 
 1. When V<sub>ICM</sub> changes there is a change in the output voltage and Drain current.
 
 2. If the input voltage is more then the minimum swing or outside the allowable swing the output wave form deforms, ie it is in triode or cutoff region.
-
-3. If R<sub>D</sub> value changes there will be a change in the output voltage,by selecting the resistance wecan control the output voltage.
-
-4. V<sub>b</sub> should be less than V<sub>p</sub> as the drain voltage of MOSFET M3 is V<sub>p</sub>
-and the V<sub>b</sub> should be greater than the V<sub>th</sub> .
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   
+3. Circuit 1 is a differential pair with a resistor , cannot be precisely biased.
  
+4. Circuit 2 uses an ideal current source, it improves the swing .
+  
+5. Circuit 3 uses an active current source using NMOS, providing best stability and is more practical for real applications.
+**Circuit 3 is the preferred design**.
