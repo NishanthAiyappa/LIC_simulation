@@ -140,15 +140,12 @@ AC Amplitude as 1 and AC Phase as 180 in V2 <br>
 - the Vout remains almost unchanged when both the Vicm is varied simultaneously, if the Vicm voltages is varied at different directions the Vout changes from each other,if the input signal of the second MOSFET is increased its gain reduces.
 
   V2(50 mV) is given a different input signal than the V1(25 mV).
-
-![circ3_50mv](https://github.com/user-attachments/assets/f2fc283d-da4a-4edf-9cff-d7e5a8d9e828)
-
-
+  
+![image](https://github.com/user-attachments/assets/c84dcad9-74ae-4924-a6a5-2f71606bfc54)
 
 ### **Circuit 2** <br>
 
 Replace the resistor with a current source=0.909mA. 
-
 ![image](https://github.com/user-attachments/assets/9c695010-58d1-4483-8dce-6e54354695c9)
 
 ### **DC Analysis**
