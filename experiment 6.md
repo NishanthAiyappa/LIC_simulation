@@ -172,9 +172,11 @@ Gain=V<sub>out</sub>/V<sub>in</sub>=-65 mV/2mV= -2.6 V/V
 
 - Gain Av = 4.5 dB.
 ### 5.Inference
-- As **L increases**, V<sub>out</sub> decreases, improving **output resistance**.
-- **Drain current I<sub>D</sub> slightly increases** with increasing channel length, likely due to reduced channel-length modulation effects.
+When the length is increased and the W/L ratio of the NMOS is kept constant.
+-  V<sub>out</sub> decreases, ie **output resistance** increases.
+- **Drain current I<sub>D</sub> slightly increases** with increasing channel length, due to reduced channel-length modulation effects.
 - Higher **L** results in **better current matching and stability** in the current mirror.
+- 
 
 | **Feature**                  | **1:1 Ratio Current Mirror** | **1:2 Ratio Current Mirror** | **Inference** |
 |------------------------------|-----------------------------|-----------------------------|--------------|
