@@ -51,8 +51,89 @@ from the above graph we can set the biasing voltage as 0.85 V.
  
  ![image](https://github.com/user-attachments/assets/315d8e80-e30b-43b3-8125-a9d5f803c825)
 
+By changing the length of the NMOSFET to 500 nm and 1 um but keeping the W/L ratio the same we observe some changes in the V<sub>out</sub> and I<sub>D</sub>.
 
+| Length (L) | Width (W1) | Width (W2) | Width (W3) | I<sub>REF</sub> | I<sub>D</sub> | V<sub>out</sub> |
+|-----|----|----|----|----|----|-----|
+| 180nm | 2.5 um  | 2.5 um | 2.9 um | 0.277 mA | 0.27711 mA | 0.552485 V |
+| 500nm | 2.5 um | 2.5 um | 8.055 um | 0.277 mA | 0.284046 mA | 0.289677 V |
+| 1um | 2.5 um | 2.5 um | 16.11 um | 0.277 mA | 0.285765 mA | 0.213333 V |
+
+
+
+### Transient Analysis
+
+ ![image](https://github.com/user-attachments/assets/fcc70ef8-2075-4cff-aa74-b1ba47f56c87)
+
+Gain=V<sub>out</sub>/V<sub>in</sub>=-300mV/25mV= -12 V/V
+
+### AC Analysis
+
+![image](https://github.com/user-attachments/assets/4e1452b3-031f-4338-85c7-b4603bbd7f43)
+
+- Gain Av = 21.1 dB.
+- -3dB bandwidth frequency = 754.698 MHz.
+
+ | Gain | Theoretical Value | Practical Value |
+|---|----|---|
+| Av (V/V) | 10 | 12 |
+| Av (dB) | 20 | 21.1 |    
+
+### for 1:2 Ratio
+### 3.2 Ciruit Design
+
+
+1. Determine the Total current (I<sub>TOTAL</sub>)
+
+   I<sub>TOTAL</sub> = P/V<sub>DD</sub>= 1.8 V = 1 m/1.8 = 0.555 mA
+
+2. Determine the reference current ( I<sub>REF</sub>)
+
+  I<sub>TOTAL</sub>=  I<sub>REF</sub>+ 2*I<sub>D</sub>
+  
+  I<sub>REF</sub> = I<sub>TOTAL</sub>/3 = 0.555m/3 = 0.185 mA
+
+  I<sub>D</sub>=  I<sub>REF</sub>*2= 0.37 mA
+  ![image](https://github.com/user-attachments/assets/447ece28-ac43-4665-80a8-c03dfc3096f5)
+
+|Parameters | PMOS(M1)| PMOS(M2) | NMOS(M3) |
+|-----|----|----|----|----|----|-----|
+| Length| 180nm |180nm | 180nm | 
+| Width | 2.5um | 5 um | 3.897 um | 
+
+ ### 4.2 Simulation.
+ ### DC Analysis
  
+ ![image](https://github.com/user-attachments/assets/a22ed3e0-1f72-48c6-bae5-bf55954379f8)
+
+By changing the length of the NMOSFET to 500 nm and 1 um but keeping the W/L ratio the same we observe some changes in the V<sub>out</sub> and I<sub>D</sub>.
+
+| Length (L) | Width (W1) | Width (W2) | Width (W3) | I<sub>REF</sub> | I<sub>D</sub> | V<sub>out</sub> |
+|-----|----|----|----|----|----|-----|
+| 180nm | 2.5 um  | 5 um | 3.897 um | 0.185 mA | 0.370105 mA | 0.552485 V |
+| 500nm | 2.5 um | 5 um | 10.825 um | 0.185 mA | 0.380347 mA | 0.287608 V |
+| 1um | 2.5 um | 5 um | 21.65 um | 0.185 mA | 0.382464 mA | 0.211787 V |
+
+
+
+### Transient Analysis
+
+![image](https://github.com/user-attachments/assets/7df0d17e-0b1e-428c-b1bc-d5a3a0696375)
+
+Gain=V<sub>out</sub>/V<sub>in</sub>=-280mV/25mV= -11.2 V/V
+
+### AC Analysis
+
+![image](https://github.com/user-attachments/assets/67b911ac-3a1f-4b99-882d-b92d6c6ad52d)
+
+- Gain Av = 20.9 dB.
+- -3dB bandwidth frequency = 804.698 MHz.
+
+ | Gain | Theoretical Value | Practical Value |
+|---|----|---|
+| Av (V/V) | 10 | 11.2 |
+| Av (dB) | 20 | 20.9 |    
+
 
  
  
