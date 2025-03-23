@@ -134,6 +134,39 @@ Gain=V<sub>out</sub>/V<sub>in</sub>=-280mV/25mV= -11.2 V/V
 | Av (V/V) | 10 | 11.2 |
 | Av (dB) | 20 | 20.9 |    
 
+### Design B
+Design the differential amplifier using the same design specification as Experiment_3. 
+
+- V<sub>DD</sub>=3.3 V
+- p<=3 mW
+- V<sub>ICM</sub>=1.65 V
+- V<sub>ocm</sub>=1.7 V
+- V<sub>P</sub>=0.5 V
+### Circuit
+ from calculation we have found I<sub>SS</sub> value as 0.909 mA <br>
+I<sub>D1</sub> and I<sub>D2</sub> as 0.45 mA <br>
+the ratio is 1:2 thus I<sub>REF</sub>=I<sub>SS</sub>/2 = 0.45 mA <br>
+
+![image](https://github.com/user-attachments/assets/9c633fb7-f2ac-4100-9e4e-6ccf9117df9f)
 
  
+ |Parameters | PMOS(M3)| PMOS(M4) | NMOS(M1) | NMOS(M2) | NMOS(M5) | NMOS(M6) | 
+|-----|----|----|----|----|----|-----|
+| Length| 180 nm |180 nm | 180 nm | 180 nm | 1 um | 1 um | 
+| Width | 2.214 um | 2.214 um | 1.82 um | 1.82 um | 220 um |110 um |  
+
+ ###  Simulation.
+ ### DC Analysis
  
+![image](https://github.com/user-attachments/assets/d18c3841-44cb-4ce6-a557-c2b1e7fec90a)
+
+### Transient Analysis
+
+![image](https://github.com/user-attachments/assets/092173af-e22a-42ed-b386-c3fa881e69f6)
+
+Gain=V<sub>out</sub>/V<sub>in</sub>=-65 mV/2mV= -2.6 V/V
+### AC Analysis
+
+![image](https://github.com/user-attachments/assets/3397b664-e436-4bc1-9854-8b8507444979)
+
+- Gain Av = 4.5 dB.
