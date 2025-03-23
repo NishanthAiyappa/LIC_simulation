@@ -36,7 +36,7 @@ A current mirror operates based on the concept that two identical transistors, w
   ![image](https://github.com/user-attachments/assets/447ece28-ac43-4665-80a8-c03dfc3096f5)
 
 |Parameters | PMOS(M1)| PMOS(M2) | NMOS(M3) |
-|-----|----|----|----|----|----|-----|
+|-----|----|----|----|
 | Length| 180nm |180nm | 180nm | 
 | Width | 2.5um | 2.5um | 2.9um | 
 
@@ -94,10 +94,11 @@ Gain=V<sub>out</sub>/V<sub>in</sub>=-300mV/25mV= -12 V/V
   I<sub>REF</sub> = I<sub>TOTAL</sub>/3 = 0.555m/3 = 0.185 mA
 
   I<sub>D</sub>=  I<sub>REF</sub>*2= 0.37 mA
+  
   ![image](https://github.com/user-attachments/assets/447ece28-ac43-4665-80a8-c03dfc3096f5)
 
 |Parameters | PMOS(M1)| PMOS(M2) | NMOS(M3) |
-|-----|----|----|----|----|----|-----|
+|-----|----|----|----|
 | Length| 180nm |180nm | 180nm | 
 | Width | 2.5um | 5 um | 3.897 um | 
 
@@ -170,3 +171,22 @@ Gain=V<sub>out</sub>/V<sub>in</sub>=-65 mV/2mV= -2.6 V/V
 ![image](https://github.com/user-attachments/assets/3397b664-e436-4bc1-9854-8b8507444979)
 
 - Gain Av = 4.5 dB.
+### 5.Inference
+- As **L increases**, V<sub>out</sub> decreases, improving **output resistance**.
+- **Drain current I<sub>D</sub> slightly increases** with increasing channel length, likely due to reduced channel-length modulation effects.
+- Higher **L** results in **better current matching and stability** in the current mirror.
+
+| **Feature**                  | **1:1 Ratio Current Mirror** | **1:2 Ratio Current Mirror** | **Inference** |
+|------------------------------|-----------------------------|-----------------------------|--------------|
+| **Current Accuracy**         | Higher accuracy due to identical transistor sizes. | Slight difference due to different transistor widths. | 1:1 ratio provides better current matching. |
+| **Transistor Sizing**        | Smaller transistors, requiring less area. | Larger transistor widths needed, increasing area consumption. | 1:1 ratio is more efficient in terms of chip area. |
+| **Output Resistance** | **Higher**, as longer **L** reduces $lambda$ , increasing r<sub>out</sub> . | **Slightly lower**, as larger transistor widths may introduce mismatch, slightly increasing $lambda$. | 1:1 ratio provides better stability due to **higher output resistance**. |
+| **Power Consumption**        | Lower due to smaller transistors. | Slightly higher due to increased transistor sizes. | 1:2 ratio consumes more power due to larger devices. |
+| **Design Complexity**        | Easier to implement and match. | Requires careful selection of width . | 1:1 ratio is simpler to design and optimize. |
+
+
+
+- A differential amplifier performs better when a **current mirror** is used instead of a **resistor load**.  
+- use of additional MOSFETs increases **complexity of the circuit**.
+- using current mirror **enhances gain and stability** of the differential amplifier.
+- current mirror **Reduces offset variations**.
