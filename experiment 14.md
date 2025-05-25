@@ -72,7 +72,12 @@ A monostable multivibrator, also known as a one-shot, has only one stable state.
 3.	Analyze the capacitor charging and discharging Voltage per time.
 4.	Analyze the ton period when input is triggered.
 
+
 ## Calculation
+![WhatsApp Image 2025-05-25 at 10 27 49 PM](https://github.com/user-attachments/assets/5732fca0-5e8c-4797-a74b-34de441e5371)
+
+![WhatsApp Image 2025-05-25 at 10 27 50 PM](https://github.com/user-attachments/assets/e16eea9b-03ac-435c-aa1e-872aebd2f6d0)
+
 
 ## Circuit Diagram:
 ![image](https://github.com/user-attachments/assets/b07bcbbe-72dd-4548-a828-e1ff5dc9cebd)
