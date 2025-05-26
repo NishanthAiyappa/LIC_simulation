@@ -1,4 +1,4 @@
-
+`
 # Monostable multivibrator using 555 timer IC .
 ## Aim
 ### Generate pulse of width 0.5 ms using input triggers.
@@ -87,12 +87,12 @@ A monostable multivibrator, also known as a one-shot, has only one stable state.
 ### Case 1:
 ![image](https://github.com/user-attachments/assets/bdcbd7d8-b042-44d8-a02f-16989a367a90)
 
-First wave is output of Astable Multivibrator, Second waveform is Output of Differentiator Circuit output, 3rd wave is the output of Positive Clipper circuit and fourth waveform is output of Monostable Multivibrator pulse width is 0.5ms.
+First wave is output of Astable Multivibrator, Second waveform is Output of Differentiator Circuit output, 3rd wave is the output of Negative Clipper circuit and fourth waveform is output of Monostable Multivibrator pulse width is 0.5ms.
 
 ### Case 2:
 ![image](https://github.com/user-attachments/assets/bb0dabe9-f63f-4be1-9e6b-fbbc78f23174)
 
-First wave is output of Astable Multivibrator, Second waveform is Output of Differentiator Circuit output, 3rd wave is the output of Positive Clipper circuit and fourth waveform is output of Monostable Multivibrator pulse width is 0.5ms.
+First wave is output of Astable Multivibrator, Second waveform is Output of Differentiator Circuit output, 3rd wave is the output of Negative Clipper circuit and fourth waveform is output of Monostable Multivibrator pulse width is 0.5ms.
  cap value .1u
 
  ### Case 3:
@@ -106,7 +106,7 @@ First wave is output of Astable Multivibrator, Second waveform is Output of Diff
 
 
 
-First wave is output of inverted Astable Multivibrator, Second waveform is Output of Differentiator Circuit output, 3rd wave is the output of Positive Clipper circuit and fourth waveform is output of Monostable Multivibrator pulse width is 0.5ms.
+First wave is output of inverted Astable Multivibrator, Second waveform is Output of Differentiator Circuit output, 3rd wave is the output of Negative Clipper circuit and fourth waveform is output of Monostable Multivibrator pulse width is 0.5ms.
 
 ## Inference
 - Controlling ON and OFF Times Isn't Always Straightforward
